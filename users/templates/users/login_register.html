@@ -21,7 +21,10 @@
             <div class="form__field">
                 <label for="formInput#text">{{field.label}}</label>
                 {{field}}
-              </div>
+                {% for eer in field.errors %}
+                    <p style="color: red;">{{eer}}</p>
+                {% endfor %}    
+            </div>
             {% endfor %}
             <div class="auth__actions">
               <input class="btn btn--sub btn--lg" type="submit" value="Sign  In" />
